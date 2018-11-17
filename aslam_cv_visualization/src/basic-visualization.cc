@@ -21,7 +21,10 @@ void drawKeypoints(const aslam::VisualFrame& frame, cv::Mat* image) {
     } else {
       keypoint = frame.getKeypointMeasurement(keypoint_idx);
     }
-    cv::circle(*image, cv::Point(keypoint[0], keypoint[1]), 1,
+
+    const double radius = pow(2, frame.getKeypointScale(keypoint_idx)) * 10;
+
+    cv::circle(*image, cv::Point(keypoint[0], keypoint[1]), radius,
                cv::Scalar(0, 255, 255), 1, CV_AA);
   }
 }
@@ -286,5 +289,5 @@ bool drawFeatureTracks(const aslam::FeatureTracks& tracks, cv::Mat* image) {
   }
   return true;
 }
-  
+
 }  // namespace aslam_cv_visualization

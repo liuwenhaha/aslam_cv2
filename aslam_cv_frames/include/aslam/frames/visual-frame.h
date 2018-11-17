@@ -241,7 +241,7 @@ class VisualFrame  {
   /// Replace (swap) the internal keypoint scores by the passed ones.
   void swapKeypointScores(Eigen::VectorXd* scores);
 
-  /// Replace (swap) the internal keypoint orientations by the passed ones.
+  /// Replace (swap) the internal keypoint scale by the passed ones.
   void swapKeypointScales(Eigen::VectorXd* scales);
 
   /// Replace (swap) the internal descriptors by the passed ones.

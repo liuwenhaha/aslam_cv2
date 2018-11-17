@@ -59,8 +59,8 @@ void insertCvKeypointsAndDescriptorsIntoEmptyVisualFrame(
     const cv::KeyPoint& cv_keypoint = new_cv_keypoints[idx];
     new_keypoints_measurements.col(idx)(0) = static_cast<double>(cv_keypoint.pt.x);
     new_keypoints_measurements.col(idx)(1) = static_cast<double>(cv_keypoint.pt.y);
+    new_keypoint_scales(idx) = static_cast<double>(cv_keypoint.octave);
     new_keypoint_scores(idx) = static_cast<double>(cv_keypoint.response);
-    new_keypoint_scales(idx) = static_cast<double>(cv_keypoint.size);
     new_keypoint_orientations(idx) = static_cast<double>(cv_keypoint.angle);
   }
 
